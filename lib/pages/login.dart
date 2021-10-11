@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
           child: Column(
             children: [
               const SizedBox(
-                height: 60.0,
+                height: 20.0,
               ),
               Text(
                 "Welcome to Sign In $name",

@@ -26,11 +26,11 @@ class ViewDetail extends StatelessWidget {
             "Rs ${mobiles.price}".text.bold.xl4.red800.make(),
             ElevatedButton(
                     onPressed: () {
-                      // Navigator.pushNamed(context, "/mobiles_detail");
+                      Navigator.pushNamed(context, "/uploadFile");
                     },
                     style: ButtonStyle(
-                        backgroundColor:
-                            MaterialStateProperty.all(context.theme.buttonColor),
+                        backgroundColor: MaterialStateProperty.all(
+                            context.theme.buttonColor),
                         shape: MaterialStateProperty.all(StadiumBorder())),
                     child: "Add to cart".text.make())
                 .wh(120, 50)
@@ -58,21 +58,23 @@ class ViewDetail extends StatelessWidget {
               child: Container(
                 width: context.screenWidth,
                 color: context.cardColor,
-                child: Column(
-                  children: [
-                    mobiles.name.text.xl4
-                        .color(context.accentColor)
-                        .bold
-                        .make(),
-                    mobiles.desc.text.color(Colors.grey).xl.make(),
-                    10.heightBox,
-                    "Lorem ipsum sit dollor amit Lorem ipsum sit dollor Lorem ipsum sit dollor amit Lorem ipsum sit dollor amit Lorem ipsum sit dollor amit Lorem ipsum sit dollor amit Lorem ipsum sit dollor amit Lorem ipsum sit dollor amit Lorem ipsum sit dollor amit"
-                        .text
-                        .color(Colors.grey)
-                        .make()
-                        .p16()
-                  ],
-                ).py64(),
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      mobiles.name.text.xl4
+                          .color(context.accentColor)
+                          .bold
+                          .make(),
+                      mobiles.desc.text.color(Colors.grey).xl.make(),
+                      10.heightBox,
+                      "Lorem ipsum sit dollar amit Lorem ipsum sit dollar Lorem ipsum sit dollar amit Lorem ipsum sit dollar amit Lorem ipsum sit dollar amit Lorem ipsum sit dollar amit Lorem ipsum sit dollar amit Lorem ipsum sit dollar amit Lorem ipsum sit dollar amit"
+                          .text
+                          .color(Colors.grey)
+                          .make()
+                          .p16()
+                    ],
+                  ).py64(),
+                ),
               ),
             ))
           ],

@@ -39,18 +39,21 @@ class _MobileDetailState extends State<MobileDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          padding: const EdgeInsets.all(32.0),
-          child: Column(
-            children: [
-              const HeaderDetail(),
-              if (MobileModel.mobiles != null && MobileModel.mobiles.isNotEmpty)
-                const MobilesList()
-              else
-                const Center(
-                  child: CircularProgressIndicator(),
-                )
-            ],
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(32.0),
+            child: Column(
+              children: [
+                const HeaderDetail(),
+                if (MobileModel.mobiles != null &&
+                    MobileModel.mobiles.isNotEmpty)
+                  const MobilesList()
+                else
+                  const Center(
+                    child: CircularProgressIndicator(),
+                  )
+              ],
+            ),
           ),
         ),
       ),
